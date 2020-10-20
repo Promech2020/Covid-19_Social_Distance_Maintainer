@@ -24,7 +24,7 @@ def pre_process(v_path, wait_time_before, a_path):
 #########################################
 def select_video(video_name):
 	if video_name == "":
-		video_p=r"F:\Gopal\Coding\20201009\SingleSystem\COVID-19_Social_Distance_Maintainer\input_video\GridTest5.mp4" 
+		video_p=r"./input_video/GridTest5.mp4" 
 	elif video_name == "WebCam":
 		video_p = "0"
 	else :
@@ -45,8 +45,7 @@ def wait_to_play_warning(sec):
 def select_audio(audio):
 	#Take input for how many seconds do you want to wait after playing warning.
 	if audio == "":
-		sound = r"F:\Gopal\Coding\20201009\SingleSystem\COVID-19_Social_Distance_Maintainer\sound\covid_msg.wav"
-		# sound = "../sound/covid_msg.wav"
+		sound = r"./sound/covid_msg.wav"
 	else:
 		sound = audio
 	return sound
