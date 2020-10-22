@@ -4,8 +4,8 @@ Social Distance Maintainer is our small step to aware people about social distan
 
 # Objective
 
-To help maintain social distancing in people's queues.
-To help to reduce the pace of Covid-19 Spread.
+1. To help maintain social distancing in people's queues.
+2. To help to reduce the pace of Covid-19 Spread.
 
 # Requirements
 
@@ -44,14 +44,15 @@ Here, in above figures, figure 1 covers more areas in the video frame than figur
 ## Hardware Requirements
 
 For this system, we will require following devices:
-CPU which includes:
-Memory 8GB or higher.
-Processor i5 or higher. 
-Nvidia GeForce GTX-1080 or higher.
-IP Camera(Normal View)
-Monitor to display output.
-Speaker to play warning.
-Keyboard/Mouse to control.
+
+1. CPU which includes:
+..1. Memory 8GB or higher.
+..2. Processor i5 or higher. 
+..3. Nvidia GeForce GTX-1080 or higher.
+2. IP Camera(Normal View)
+3. Monitor to display output.
+4. Speaker to play warning.
+5. Keyboard/Mouse to control.
 
 ## Software Requirements
 To install this system, we will first need to install cuDNN 7.6 and CUDA 10.1 along with Python version 3.7.
@@ -59,6 +60,7 @@ To install this system, we will first need to install cuDNN 7.6 and CUDA 10.1 al
 Below, is a youtube tutorial link about how to install cuDNN and CUDA in windows 10.
 
 Link: https://www.youtube.com/watch?v=2TcnIzJ1RQs&feature=emb_title
+
 Now you need to create a virtual environment.  We prefer Anaconda to create virtual environments. However, you can also create one with Pip.
 
 To install anaconda and create new virtual environment, please follow following youtube tutorial:
@@ -71,7 +73,7 @@ Link: https://www.youtube.com/watch?v=UqkT2Ml9beg
 
 After creating a virtual environment, you need to install packages listed in requirements.txt in that environment. You can use following command to install all the packages listed in requirements.txt file:
 
-pip install -r requirements.txt
+> pip install -r requirements.txt
 
 Along with this, we need to install an IDE. It is not mandatory but preferred for the long run. There are a lot of IDEs, but I personally prefer VS Code.
 
@@ -87,46 +89,72 @@ Anyone will do fine.
 ## Edit Config File
 
 This is not mandatory. But if you want different output, you can edit our config file and the program will run according to that settings.
+
 Config file is located inside SupportingFiles and named as config.txt which contains the following elements you can change as you wish.
 
-ignore value = Ignore human detection, if the bounding box height is less than specified value. Currently, our program will ignore human detection if the bounding box height is less than 200.
-inside_main_zone = The value in inside_main_zone decides the area of freedom to move from marking points for people who are standing inside the main zone. Currently, people have 20% of the social distance gap as an area of freedom. For example, if we have kept social distance to maintain as 1.5 m, people can go up to 1.2 m and still warning audio will not be played. But if he goes less than 1.2, it will play warning.
-boundary_zones_with_zone = Same as inside_main_zone, but for people who are in boundary zones but near to the main zone.
-boundary_zones = Same as above, but for people who are in boundary zones and far from the main zone.
+1. ignore value = Ignore human detection, if the bounding box height is less than specified value. Currently, our program will ignore human detection if the bounding box height is less than 200.
+
+2. inside_main_zone = The value in inside_main_zone decides the area of freedom to move from marking points for people who are standing inside the main zone. Currently, people have 20% of the social distance gap as an area of freedom. For example, if we have kept social distance to maintain as 1.5 m, people can go up to 1.2 m and still warning audio will not be played. But if he goes less than 1.2, it will play warning.
+
+3. boundary_zones_with_zone = Same as inside_main_zone, but for people who are in boundary zones but near to the main zone.
+
+4. boundary_zones = Same as above, but for people who are in boundary zones and far from the main zone.
 full_screen = If it is True, it will show the output in full screen, if it is False, it will show the output in 1280 width frame.
-show_humans_detected = If it is True, it will show a green dot for every human detected.
+
+5. show_humans_detected = If it is True, it will show a green dot for every human detected.
 gap = It is the time to wait between playing warnings. There may be 1-5 seconds variations than the actual gap defined, due to various processing in the program. We suggest you to not change this value for optimal performance.
-color = This is the color for the bounding box for those people who violates social distancing. It is currently red. If you want, you can change the BGR values for it.
+
+6. color = This is the color for the bounding box for those people who violates social distancing. It is currently red. If you want, you can change the BGR values for it.
 
 {
+
 	'ignore_value': 200, 
+	
 	'inside_main_zone': 0.8, 
+	
 	'boundary_zones_with_main_zone': 0.7, 
+	
 	'boundary_zones': 0.6, 
+	
 	'full_screen': True, 
+	
 	'show_humans_detected': False,
+	
 	'gap': 5, 
+	
 	'color': (0, 0, 255)
+	
 
 }
 
 
 ## Run draw_grid.py
 Open command prompt.
+
 <p align="center"><img src="./SupportingImages/5.png" width="640"\></p>
+
 Activate your virtual environment. SDMaintainer is in my case.
+
 <p align="center"><img src="./SupportingImages/6.png" width="640"\></p>
+
 Run draw_grid.py with command “python draw_grid.py”.
+
 <p align="center"><img src="./SupportingImages/7.png" width="640"\></p>
+
 It will ask for a video path, number of rows and number of people in each row. Provide the information.
+
 <p align="center"><img src="./SupportingImages/8.png" width="640"\></p>
+
 After that, it will ask you to click the markings where people are going to stand. 
+
 <p align="center"><img src="./SupportingImages/9.png" width="640"\></p>
 
 Remember, you need to follow Left to right and up to bottom rule when clicking at the marks.
+
 <p align="center"><img src="./SupportingImages/10.png" width="640"\></p>
 
 After that, it will ask for nearest markings(based on horizontal and vertical lines) for each mark in the ground. For example, in above figure, for mark 1, there are 2 near points i.e. 2 and 4. Similarly, for mark 2 there are 3 near points i.e. 1, 3 and 5. And for mark 5, there 4 near points i.e. 2, 4, 6 and 8. 
+
 <p align="center"><img src="./SupportingImages/11.png" width="640"\></p>
 
 
@@ -141,16 +169,23 @@ After that, it will ask for nearest markings(based on horizontal and vertical li
 # How to run?
 
 Open command prompt.
+
 <p align="center"><img src="./SupportingImages/12.png" width="640"\></p>
+
 Activate your virtual environment. SDMaintainer is in my case.
+
 <p align="center"><img src="./SupportingImages/13.png" width="640"\></p>
+
 Run Social_Distance_Maintainer.py file with command”
-python Social_Distance_Maintainer.py
+
+> python Social_Distance_Maintainer.py
 
 <p align="center"><img src="./SupportingImages/14.png" width="640"\></p>
+
 	This will open an GUI like below:
 
 <p align="center"><img src="./SupportingImages/15.png" width="640"\></p>
+
 Here, you can choose a webcam and insert ip camera address or you can browse saved video or if you want to play a demo of our system, you can go for it.
 
 Time to wait is the time of freedom to give people standing in a queue before playing warning even if they violate the social distancing rule. You can choose various options using that drop down menu. It ranges from 5 seconds to 60 seconds. Default is 5 seconds.
