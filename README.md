@@ -10,22 +10,25 @@ Conditions
 Grid Size
 This system is designed for multiple lines of people. So, there must be at least 4 people with two at rows and two at columns. In easy language, there must be at least 2x2 grid. In case of maximum, we have tested this for 4x3 grid during development. However, it will perfectly work for a higher range.
 
-
+<p align="center"><img src="./SupportingImages/1.png" width="640"\></p>
 
 Camera Position
 Camera position should be in such a way, so that people in the queue can be visible in straight lines not diagonal. For example:
 
+<p align="center"><img src="./SupportingImages/2.png" width="640"\></p>
 
 Camera Height
 We have tested our system by placing the camera in normal room height i.e. 10ft. It will work better within range 8ft to 12ft. 
 Camera Angle
 For optimal results, try to make the camera angle equal to 45 degrees. There is one other thing to consider when adjusting camera angle and that is distance between mark points along with the bottom area of the frame. For example:
 
-<p align="center"><img src="./SupportingImages/1.png" width="640"\></p>
+<p align="center"><img src="./SupportingImages/3.png" width="640"\></p>
 
 In figure 1, the distance between the bottom area of frame and lower markings has very less gap in comparison to figure 2. And that is the preferable camera angle along with near to 45 degrees.
 
 Also, try to make the markings to cover the video frame as much as possible. For example:
+
+<p align="center"><img src="./SupportingImages/4.png" width="640"\></p>
 
 Here, in above figures, figure 1 covers more areas in the video frame than figure 2. That is why figure 1 is preferred than figure 2 for optimal result.
 Hardware Requirements
@@ -96,21 +99,21 @@ color = This is the color for the bounding box for those people who violates soc
 
 Run draw_grid.py
 Open command prompt.
-
+<p align="center"><img src="./SupportingImages/5.png" width="640"\></p>
 Activate your virtual environment. SDMaintainer is in my case.
-
+<p align="center"><img src="./SupportingImages/6.png" width="640"\></p>
 Run draw_grid.py with command “python draw_grid.py”.
-
+<p align="center"><img src="./SupportingImages/7.png" width="640"\></p>
 It will ask for a video path, number of rows and number of people in each row. Provide the information.
-
+<p align="center"><img src="./SupportingImages/8.png" width="640"\></p>
 After that, it will ask you to click the markings where people are going to stand. 
-
+<p align="center"><img src="./SupportingImages/9.png" width="640"\></p>
 
 Remember, you need to follow Left to right and up to bottom rule when clicking at the marks.
-
+<p align="center"><img src="./SupportingImages/10.png" width="640"\></p>
 
 After that, it will ask for nearest markings(based on horizontal and vertical lines) for each mark in the ground. For example, in above figure, for mark 1, there are 2 near points i.e. 2 and 4. Similarly, for mark 2 there are 3 near points i.e. 1, 3 and 5. And for mark 5, there 4 near points i.e. 2, 4, 6 and 8. 
-
+<p align="center"><img src="./SupportingImages/11.png" width="640"\></p>
 
 
 
@@ -123,16 +126,16 @@ After that, it will ask for nearest markings(based on horizontal and vertical li
 
 How to run?
 Open command prompt.
-
+<p align="center"><img src="./SupportingImages/12.png" width="640"\></p>
 Activate your virtual environment. SDMaintainer is in my case.
-
+<p align="center"><img src="./SupportingImages/13.png" width="640"\></p>
 Run Social_Distance_Maintainer.py file with command”
 python Social_Distance_Maintainer.py
 
-
+<p align="center"><img src="./SupportingImages/14.png" width="640"\></p>
 	This will open an GUI like below:
 
-
+<p align="center"><img src="./SupportingImages/15.png" width="640"\></p>
 Here, you can choose a webcam and insert ip camera address or you can browse saved video or if you want to play a demo of our system, you can go for it.
 
 Time to wait is the time of freedom to give people standing in a queue before playing warning even if they violate the social distancing rule. You can choose various options using that drop down menu. It ranges from 5 seconds to 60 seconds. Default is 5 seconds.
