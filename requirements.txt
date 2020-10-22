@@ -1,0 +1,17 @@
+# tensorflow-gpu==2.3.0rc0
+tensorflow-gpu==2.1
+opencv-python==4.1.1.26
+lxml
+tqdm
+absl-py
+matplotlib
+easydict
+pillow
+imutils
+numpy==1.19.2
+shapely==1.7.1
+soundfile
+sounddevice
+scipy==1.4.1
+pyqt5
+

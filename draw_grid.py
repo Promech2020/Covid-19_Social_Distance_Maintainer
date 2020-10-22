@@ -46,7 +46,7 @@ def get_essential_data():
 
     print(bcolors.OKGREEN +" Done : [ Config file loaded ] ..."+bcolors.ENDC )
 
-    img_path = "./SupportingImages/for_grid.bmp"
+    img_path = "./SupportingImages/for_grid.jpg"
     img = cv2.imread(img_path)
     img = imutils.resize(img, width=1280)
 

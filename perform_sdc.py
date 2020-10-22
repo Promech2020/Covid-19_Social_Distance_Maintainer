@@ -84,7 +84,7 @@ fs = None
 COLOR_RED = (0, 0, 255)
 
 ######################################### 
-# Load the background for the top-down view #
+# Load the config file #
 #########################################
 print(bcolors.WARNING +"[ Loading Config file for settings] "+ bcolors.ENDC)
 
@@ -93,7 +93,6 @@ ignore_value = input_values["ignore_value"]
 inside_main_zone = input_values['inside_main_zone']
 boundary_zones_with_main_zone = input_values['boundary_zones_with_main_zone']
 boundary_zones = input_values['boundary_zones']
-width_input = input_values['width_input']
 full_screen = input_values['full_screen']
 show_humans_detected = input_values['show_humans_detected']
 waits = input_values['gap']
@@ -107,7 +106,7 @@ print(bcolors.OKGREEN +" Done : [ Config file loaded ] ..."+bcolors.ENDC )
 #########################################
 print(bcolors.WARNING +"[ Loading background calculation file for drawing grid] "+ bcolors.ENDC)
 
-input_data = eval(open(r"F:\Gopal\Coding\20201009\SingleSystem\COVID-19_Social_Distance_Maintainer\SupportingFiles\background_data.txt", 'r').read())
+input_data = eval(open(r"./SupportingFiles/background_data.txt", 'r').read())
 nearest_distance_combo = input_data["nearest_distance_combo"]
 sorted_points = input_data["all_points_sorted"]
 zones = input_data["all_zones_tagged"]
@@ -474,7 +473,7 @@ def work_with_video(video_s,fps,input_size, infer):
         # if video_path != "0":
             if output_video_1 is None:
                 fourcc1 = cv2.VideoWriter_fourcc(*"MJPG")
-                output_video_1 = cv2.VideoWriter(r"F:\Gopal\Coding\20201009\SingleSystem\COVID-19_Social_Distance_Maintainer\output_video\OutputVideo.avi", fourcc1, 19,(frame.shape[1], frame.shape[0]), True)
+                output_video_1 = cv2.VideoWriter(r"./output_video/OutputVideo.avi", fourcc1, 19,(frame.shape[1], frame.shape[0]), True)
             elif output_video_1 is not None:
                 output_video_1.write(frame)
 
