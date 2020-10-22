@@ -1,33 +1,33 @@
-#Introduction
+# Introduction
 
 Social Distance Maintainer is our small step to aware people about social distancing. This system is designed to work for people standing in a multiple queue. It will detect the people violating social distance in a queue, and play warning if they do not maintain social distancing for a long period of time(Can be decided by our client. Current default value is 5 seconds). Warning audio will be played in loop(with some gap in between, 5 seconds to be exact) until people maintain required social distance again.
 
-#Objective
+# Objective
 
 To help maintain social distancing in people's queues.
 To help to reduce the pace of Covid-19 Spread.
 
-#Requirements
+# Requirements
 
-##Conditions
+## Conditions
 
-###Grid Size
+### Grid Size
 
 This system is designed for multiple lines of people. So, there must be at least 4 people with two at rows and two at columns. In easy language, there must be at least 2x2 grid. In case of maximum, we have tested this for 4x3 grid during development. However, it will perfectly work for a higher range.
 
 <p align="center"><img src="./SupportingImages/1.png" width="640"\></p>
 
-###Camera Position
+### Camera Position
 
 Camera position should be in such a way, so that people in the queue can be visible in straight lines not diagonal. For example:
 
 <p align="center"><img src="./SupportingImages/2.png" width="640"\></p>
 
-###Camera Height
+### Camera Height
 
 We have tested our system by placing the camera in normal room height i.e. 10ft. It will work better within range 8ft to 12ft. 
 
-###Camera Angle
+### Camera Angle
 
 For optimal results, try to make the camera angle equal to 45 degrees. There is one other thing to consider when adjusting camera angle and that is distance between mark points along with the bottom area of the frame. For example:
 
@@ -41,7 +41,7 @@ Also, try to make the markings to cover the video frame as much as possible. For
 
 Here, in above figures, figure 1 covers more areas in the video frame than figure 2. That is why figure 1 is preferred than figure 2 for optimal result.
 
-##Hardware Requirements
+## Hardware Requirements
 
 For this system, we will require following devices:
 CPU which includes:
@@ -53,7 +53,7 @@ Monitor to display output.
 Speaker to play warning.
 Keyboard/Mouse to control.
 
-##Software Requirements
+## Software Requirements
 To install this system, we will first need to install cuDNN 7.6 and CUDA 10.1 along with Python version 3.7.
  
 Below, is a youtube tutorial link about how to install cuDNN and CUDA in windows 10.
@@ -75,16 +75,16 @@ pip install -r requirements.txt
 
 Along with this, we need to install an IDE. It is not mandatory but preferred for the long run. There are a lot of IDEs, but I personally prefer VS Code.
 
-#One-time Setup
+# One-time Setup
 
 These are the settings to make just once after the camera is set. After that, you can always go to the How to run section directly whenever you want to run our program.
 
-##Get Camera IP address
+## Get Camera IP address
 
 Get the ip address of the IP camera. It can either start with rtsp or http or https or tcp or udp.
 Anyone will do fine.
 
-##Edit Config File
+## Edit Config File
 
 This is not mandatory. But if you want different output, you can edit our config file and the program will run according to that settings.
 Config file is located inside SupportingFiles and named as config.txt which contains the following elements you can change as you wish.
@@ -111,7 +111,7 @@ color = This is the color for the bounding box for those people who violates soc
 }
 
 
-##Run draw_grid.py
+## Run draw_grid.py
 Open command prompt.
 <p align="center"><img src="./SupportingImages/5.png" width="640"\></p>
 Activate your virtual environment. SDMaintainer is in my case.
@@ -138,7 +138,7 @@ After that, it will ask for nearest markings(based on horizontal and vertical li
 
 
 
-#How to run?
+# How to run?
 
 Open command prompt.
 <p align="center"><img src="./SupportingImages/12.png" width="640"\></p>
