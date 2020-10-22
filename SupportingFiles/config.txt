@@ -1,0 +1,22 @@
+#ignore value = Ignore human detection, if the bounding box height is less than specified value. Currently, our program will ignore human detection if the bounding box height is less than 200.
+#inside_main_zone = The value in inside_main_zone decides, the area of freedom to move from marking points for people who are standing inside the main zone. Currently, people has 20% of social distance gap as area of freedom. For example, if we have kept social distance to maintain as 1.5 m, people can go up to 1.2 m and still warning audio will not be played. But if he go less than 1.2, it will play warning.
+#boundary_zones_with_zone = Same as inside_main_zone, but for people who are in boundary zones but near to main zone.
+#boundary_zones = Same as above, but for people who are far from main zone.
+#width_input = It is for the output frame size. Currently it is maintained as 1280 pixel width. We suggest you to not change this, for optimal result.
+#full_screen = If it is True, it will show the output in full screen, if it is False, it will show the output in 1280 width frame.
+#show_humans_detected = If it is True, it will show a green dot for every human detected.
+#gap = It is the time to wait between playing warnings. There may be 1-5 seconds variations than the actual gap defined, due to various processing in program. We suggest you to not change this value too for optimal performance.
+#color = This is the color for bounding box for those people who voilates social distancing. It is currently red. If you want, you can change the RGB values for it.
+
+{
+	'ignore_value': 200, 
+	'inside_main_zone': 0.8, 
+	'boundary_zones_with_main_zone': 0.7, 
+	'boundary_zones': 0.6, 
+	'width_input': 1280, 
+	'full_screen': True, 
+	'show_humans_detected': False,
+	'gap': 5, 
+	'color': (0, 0, 255)
+
+}
