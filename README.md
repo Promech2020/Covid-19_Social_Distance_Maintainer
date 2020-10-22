@@ -21,7 +21,7 @@ We have tested our system by placing the camera in normal room height i.e. 10ft.
 Camera Angle
 For optimal results, try to make the camera angle equal to 45 degrees. There is one other thing to consider when adjusting camera angle and that is distance between mark points along with the bottom area of the frame. For example:
 
-![Alt text](./SupportingImages/1.jpg?raw=true "Title")
+<p align="center"><img src="./SupportingImages/1.png" width="640"\></p>
 
 In figure 1, the distance between the bottom area of frame and lower markings has very less gap in comparison to figure 2. And that is the preferable camera angle along with near to 45 degrees.
 
